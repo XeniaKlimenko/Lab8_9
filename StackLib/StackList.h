@@ -60,7 +60,6 @@ inline TStackList<T>::TStackList(TStackList<T>& _v)
 template<class T>
 inline TStackList<T>::~TStackList()
 {
-  list.~TList();
 }
 
 template<class T>
