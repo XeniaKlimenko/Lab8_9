@@ -101,39 +101,37 @@ inline T TQueueList<T>::Get()
 template<class T>
 inline T TQueueList<T>::Min_elem()
 {
-  int count = this->GetCount();
-  T tmp = nullptr;
-  for (int i = 0; i < count; i++)
+  if (list.GetCount() < 1)
+    throw logic_error("Error");
+  TListElem<T>* tmp = list.GetFirst();
+  T min = tmp->GetData();
+  tmp = tmp->GetNext();
+  while (tmp != NULL)
   {
-    if (tmp == nullptr)
-      tmp = this->Get();
-    else
-      {
-        T tmp1 = this->Get();
-        if (tmp1 < tmp)
-          tmp = tmp1;
-      }
+    T elem = tmp->GetData();
+    if (elem < min)
+      min = elem;
+    tmp = tmp->GetNext();
   }
-  return tmp;
+  return min;
 }
 
 template<class T>
 inline T TQueueList<T>::Max_elem()
 {
-  int count = this->GetCount();
-  T tmp = NULL;
-  for (int i = 0; i < count; i++)
+  if (list.GetCount() < 1)
+    throw logic_error("Error");
+  TListElem<T>* tmp = list.GetFirst();
+  T max = tmp->GetData();
+  tmp = tmp->GetNext();
+  while (tmp != NULL)
   {
-    if (tmp == NULL)
-      tmp = this->Get();
-    else
-      {
-        T tmp1 = this->Get();
-        if (tmp1 > tmp)
-          tmp = tmp1;
-      }
+    T elem = tmp->GetData();
+    if (elem > max)
+      max = elem;
+    tmp = tmp->GetNext();
   }
-  return tmp;
+  return max;
 }
 
 template<class T>
