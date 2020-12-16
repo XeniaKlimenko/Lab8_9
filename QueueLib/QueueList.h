@@ -122,10 +122,10 @@ template<class T>
 inline T TQueueList<T>::Max_elem()
 {
   int count = this->GetCount();
-  T tmp = nullptr;
+  T tmp = 0;
   for (int i = 0; i < count; i++)
   {
-    if (tmp == nullptr)
+    if (tmp == 0)
       tmp = this->Get();
     else
       {
