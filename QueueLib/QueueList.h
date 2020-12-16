@@ -59,7 +59,6 @@ inline TQueueList<T>::TQueueList(TQueueList<T>& _v)
 template<class T>
 inline TQueueList<T>::~TQueueList()
 {
-  list.~TList();
 }
 
 template<class T>
