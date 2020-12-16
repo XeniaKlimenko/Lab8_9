@@ -71,15 +71,13 @@ public:
 template <class T1>
 ostream& operator<< (ostream& ostr, const TListElem<T1>& A)
 {
-  ostr << A.data;
-  return ostr;
+  return ostr << A.data;
 }
 
 template <class T1>
 ostream& operator>> (istream& istr, TListElem<T1>& A)
 {
-  istr >> A.data;
-  return istr;
+  return istr >> A.data;
 }
 
 template <class T1>
